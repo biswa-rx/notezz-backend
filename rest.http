@@ -1,0 +1,39 @@
+GET http://localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc0MjMwMDUsImV4cCI6MTY4NzUwOTQwNSwiYXVkIjoiNjQ5NDA3ZjYwN2E3NjRkODkwNTI2ZTNlIiwiaXNzIjoiQklTV0FfUlgifQ.TFtUOAKMrrMEoIBUGOhwnoykj041jRQ4YUZjeAwqC4U
+
+###
+POST http://localhost:3000/auth/resister
+Content-Type: application/json
+
+{
+    "email": "biswaranjanbehera@gmail.com",
+    "password": "12345"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "biswaranjanbehera@gmail.com",
+    "password": "12345"
+}
+
+
+###
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc0MjQwMDIsImV4cCI6MTcxODk4MTYwMiwiYXVkIjoiNjQ5NDA3ZjYwN2E3NjRkODkwNTI2ZTNlIiwiaXNzIjoiQklTV0FfUlgifQ.DHIH3uBJbiRndKKja9hKrqd-xONRQvk7COVIgZVi01g"
+}
+###
+DELETE http://localhost:3000/auth/logout
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc0MjQwMDIsImV4cCI6MTcxODk4MTYwMiwiYXVkIjoiNjQ5NDA3ZjYwN2E3NjRkODkwNTI2ZTNlIiwiaXNzIjoiQklTV0FfUlgifQ.DHIH3uBJbiRndKKja9hKrqd-xONRQvk7COVIgZVi01g"
+}
+
+###
+GET http://localhost:3000/xyz

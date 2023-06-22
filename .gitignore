@@ -1,0 +1,6 @@
+# Ignore compiled binaries
+
+# Ignore log files
+package-lock.json
+# Ignore directories
+node_modules/
