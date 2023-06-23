@@ -1,6 +1,6 @@
 const JWT = require("jsonwebtoken");
 const createError = require("http-errors");
-const client = require('./inti_redis')
+const client = require("./inti_redis");
 
 module.exports = {
   signAccessToken: (userId) => {
@@ -50,14 +50,14 @@ module.exports = {
           console.log(err.message);
           reject(createError.InternalServerError());
         }
-        client.set(userId, token,'EX',365*24*60*60, (err,reply)=>{
-          if(err) {
+        client.set(userId, token, "EX", 365 * 24 * 60 * 60, (err, reply) => {
+          if (err) {
             console.log(err.message);
             reject(createError.InternalServerError());
             return;
           }
           resolve(token);
-        })
+        });
       });
     });
   },
@@ -67,18 +67,30 @@ module.exports = {
         refreshToken,
         process.env.REFRESH_TOKEN_SECRET,
         (err, payload) => {
-          if (err){
+          if (err) {
             return reject(createError.Unauthorized());
           }
           const userId = payload.aud;
-          client.GET(userId, (err,result) => {
-            if(err) {
+          client.GET(userId, (err, result) => {
+            if (err) {
               reject(createError.InternalServerError());
               return;
             }
-            if(refreshToken === result) return resolve(userId);
+            if (refreshToken === result) return resolve(userId);
             else reject(createError.Unauthorized());
-          })
+          });
+        }
+      );
+    });
+  },
+  verifyValidAccessToken: (accessToken) => {
+    return new Promise((resolve, reject) => {
+      JWT.verify(accessToken, process.env.ACCESS_TOKEN_SECRET,(err, payload) => {
+          if (err) {
+            return reject(createError.Unauthorized());
+          }
+          const userId = payload.aud;
+          resolve(userId);
         }
       );
     });

@@ -1,12 +1,12 @@
 GET http://localhost:3000
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc0MjMwMDUsImV4cCI6MTY4NzUwOTQwNSwiYXVkIjoiNjQ5NDA3ZjYwN2E3NjRkODkwNTI2ZTNlIiwiaXNzIjoiQklTV0FfUlgifQ.TFtUOAKMrrMEoIBUGOhwnoykj041jRQ4YUZjeAwqC4U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc0NDE4MzgsImV4cCI6MTY4NzUyODIzOCwiYXVkIjoiNjQ5NDQ4NDM1OTU1ZmVkOTc1ZGFhODg0IiwiaXNzIjoiQklTV0FfUlgifQ.NqyE3zaJDhvoZ8D_s9Lb3SeKrPkE1ruipZMo1CcOBgU
 
 ###
 POST http://localhost:3000/auth/resister
 Content-Type: application/json
 
 {
-    "email": "biswaranjanbehera@gmail.com",
+    "email": "biswaxx@gmail.com",
     "password": "12345"
 }
 
@@ -15,7 +15,7 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "biswaranjanbehera@gmail.com",
+    "email": "sovanbehera@gmail.com",
     "password": "12345"
 }
 
@@ -25,15 +25,55 @@ POST http://localhost:3000/auth/refresh-token
 Content-Type: application/json
 
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc0MjQwMDIsImV4cCI6MTcxODk4MTYwMiwiYXVkIjoiNjQ5NDA3ZjYwN2E3NjRkODkwNTI2ZTNlIiwiaXNzIjoiQklTV0FfUlgifQ.DHIH3uBJbiRndKKja9hKrqd-xONRQvk7COVIgZVi01g"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc0NDE4MzgsImV4cCI6MTcxODk5OTQzOCwiYXVkIjoiNjQ5NDQ4NDM1OTU1ZmVkOTc1ZGFhODg0IiwiaXNzIjoiQklTV0FfUlgifQ.Onq8_QqFKV9ow0_RltTL1MmUueNfGMPHSsSSK0MBiGI"
 }
 ###
 DELETE http://localhost:3000/auth/logout
 Content-Type: application/json
 
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc0MjQwMDIsImV4cCI6MTcxODk4MTYwMiwiYXVkIjoiNjQ5NDA3ZjYwN2E3NjRkODkwNTI2ZTNlIiwiaXNzIjoiQklTV0FfUlgifQ.DHIH3uBJbiRndKKja9hKrqd-xONRQvk7COVIgZVi01g"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc0NDE3NjcsImV4cCI6MTcxODk5OTM2NywiYXVkIjoiNjQ5NDQ4NDM1OTU1ZmVkOTc1ZGFhODg0IiwiaXNzIjoiQklTV0FfUlgifQ.k5P62nYHrsYfq4arll1bG--nSAtLgnOPfKAWEkTPb0w"
 }
 
-###
+### Random url
 GET http://localhost:3000/xyz
+
+
+
+###NOTE ROUTES
+
+### Getting all Notes
+GET http://localhost:3000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1Mjg1ODAsImV4cCI6MTY4NzYxNDk4MCwiYXVkIjoiNjQ5NDQ4NDM1OTU1ZmVkOTc1ZGFhODg0IiwiaXNzIjoiQklTV0FfUlgifQ.8ro_95M3XXY7ioDOoF7QoJ7pZ-EP9045MCtZmpSgiTo
+
+### Getting a singel note by its id
+GET http://localhost:3000/notes/64954854ef1afc2bd91669ed
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1MDU4MTYsImV4cCI6MTY4NzU5MjIxNiwiYXVkIjoiNjQ5NTRiOTg3YzE0YjBmNGMxYjE4YWM3IiwiaXNzIjoiQklTV0FfUlgifQ.bDvByJdhKAUkn9nnFjFk3T33TJd12eoMUpwIeDSoDZw
+
+### Creating a new note
+POST http://localhost:3000/notes
+Content-Type: application/json
+
+{
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1MDU4MTYsImV4cCI6MTY4NzU5MjIxNiwiYXVkIjoiNjQ5NTRiOTg3YzE0YjBmNGMxYjE4YWM3IiwiaXNzIjoiQklTV0FfUlgifQ.bDvByJdhKAUkn9nnFjFk3T33TJd12eoMUpwIeDSoDZw",
+    "name": "school2",
+    "text": "science2"
+}
+
+###Update a note
+PATCH http://localhost:3000/notes/64954bd97c14b0f4c1b18aca
+Content-Type: application/json
+
+{
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1MDU4MTYsImV4cCI6MTY4NzU5MjIxNiwiYXVkIjoiNjQ5NTRiOTg3YzE0YjBmNGMxYjE4YWM3IiwiaXNzIjoiQklTV0FfUlgifQ.bDvByJdhKAUkn9nnFjFk3T33TJd12eoMUpwIeDSoDZw",
+    "name": "tution",
+    "text": "history"
+}
+
+###Delete a note
+DELETE http://localhost:3000/notes/64959cbe7693819461271cdc
+Content-Type: application/json
+
+{
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1MDU4MTYsImV4cCI6MTY4NzU5MjIxNiwiYXVkIjoiNjQ5NTRiOTg3YzE0YjBmNGMxYjE4YWM3IiwiaXNzIjoiQklTV0FfUlgifQ.bDvByJdhKAUkn9nnFjFk3T33TJd12eoMUpwIeDSoDZw"
+}
