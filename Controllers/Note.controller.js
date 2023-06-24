@@ -105,7 +105,8 @@ module.exports = {
         throw createError(404, "Product does not exist");
       } else {
         if (userId === product.userId) {
-          const result = await Note.findByIdAndDelete(product.id);
+          const options = { new: true };
+          const result = await Note.findByIdAndDelete(product.id, options);
           res.send(result);
         } else {
           throw createError.Unauthorized();
