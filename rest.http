@@ -16,8 +16,8 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "mukesh@gmail.com",
-    "password": "12345"
+    "email": "rx@gmail.com",
+    "password": "123"
 }
 
 
@@ -26,14 +26,14 @@ POST http://localhost:3000/auth/refresh-token
 Content-Type: application/json
 
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1NzQ4MTgsImV4cCI6MTcxOTEzMjQxOCwiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.v5JdicsMze3yQrNW4di9R4YtKZgZ2xfj7hYKk3gKQNQ"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc5NzQ1MTYsImV4cCI6MTcxOTUzMjExNiwiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.cCdBhDuOL80ms8ZBq1YMhV7NdIOEK59qfN9K7Qr77Ak"
 }
 ###
 DELETE http://localhost:3000/auth/logout
 Content-Type: application/json
 
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1NzQ4MTgsImV4cCI6MTcxOTEzMjQxOCwiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.v5JdicsMze3yQrNW4di9R4YtKZgZ2xfj7hYKk3gKQNQ"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc5NzQ1MTYsImV4cCI6MTcxOTUzMjExNiwiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.cCdBhDuOL80ms8ZBq1YMhV7NdIOEK59qfN9K7Qr77A"
 }
 
 ### Random url
@@ -45,35 +45,31 @@ GET http://localhost:3000/xyz
 
 ### Getting all Notes
 GET http://localhost:3000/notes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1NzQ0NDQsImV4cCI6MTY4NzY2MDg0NCwiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.fyDQ5eh5wLxUReeDYwtqEJpsNsLW78YmTEA9ASfCn74
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODgwNDc1NDMsImV4cCI6MTY4ODEzMzk0MywiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.zJZv_fUbLejCc03brG6KpFoMJLT9dQqXGMCRDeSi_KM
 
 ### Getting a singel note by its id
-GET http://localhost:3000/notes/64965812c1aff4289ce67fc0
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1NzQ0NDQsImV4cCI6MTY4NzY2MDg0NCwiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.fyDQ5eh5wLxUReeDYwtqEJpsNsLW78YmTEA9ASfCn74
+GET http://localhost:3000/notes/64965807c1aff4289ce67fbc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODgwNDc1NDMsImV4cCI6MTY4ODEzMzk0MywiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.zJZv_fUbLejCc03brG6KpFoMJLT9dQqXGMCRDeSi_KM
 
 ### Creating a new note
 POST http://localhost:3000/notes
 Content-Type: application/json
 
 {
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1NzQ0NDQsImV4cCI6MTY4NzY2MDg0NCwiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.fyDQ5eh5wLxUReeDYwtqEJpsNsLW78YmTEA9ASfCn74",
-    "name": "muku",
-    "text": "cow"
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODgyMjU4NjgsImV4cCI6MTY4ODMxMjI2OCwiYXVkIjoiNjRhMDNiYzk4ZmRkYmU5YmM3NmNiOTRlIiwiaXNzIjoiQklTV0FfUlgifQ.5oMn-5JvdzTDhrcfpdlb0r4pAEdSLFGazIwVahsVDTY",
+    "name": "good",
+    "text": "evening"
 }
 
 ###Update a note
-PATCH http://localhost:3000/notes/64965812c1aff4289ce67fc0
+PATCH http://localhost:3000/notes/649d9092449982d9b046e4ed
 Content-Type: application/json
 
 {
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1NzQ0NDQsImV4cCI6MTY4NzY2MDg0NCwiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.fyDQ5eh5wLxUReeDYwtqEJpsNsLW78YmTEA9ASfCn74",
-    "text": "horse"
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODgwNDc1NDMsImV4cCI6MTY4ODEzMzk0MywiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.zJZv_fUbLejCc03brG6KpFoMJLT9dQqXGMCRDeSi_KM",
+    "text": "hello earth"
 }
 
 ###Delete a note
-DELETE http://localhost:3000/notes/6496580cc1aff4289ce67fbe
-Content-Type: application/json
-
-{
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc1NzQ0NDQsImV4cCI6MTY4NzY2MDg0NCwiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.fyDQ5eh5wLxUReeDYwtqEJpsNsLW78YmTEA9ASfCn74"
-}
+DELETE http://localhost:3000/notes/649d9088449982d9b046e4eb
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODgwNDc1NDMsImV4cCI6MTY4ODEzMzk0MywiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.zJZv_fUbLejCc03brG6KpFoMJLT9dQqXGMCRDeSi_KM

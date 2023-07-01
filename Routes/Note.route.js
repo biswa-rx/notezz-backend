@@ -17,6 +17,6 @@ router.post('/', NoteController.createNewNote);
 router.patch('/:id', NoteController.updateANote);
 
 //Delete a product by id
-router.delete('/:id', NoteController.deleteANote);
+router.delete('/:id',verifyAccessToken, NoteController.deleteANote);
 
 module.exports = router;

@@ -97,9 +97,10 @@ module.exports = {
   deleteANote: async (req, res, next) => {
     try {
       const productId = req.params.id;
-      const { accessToken } = req.body;
-      if (!accessToken) throw createError.BadRequest();
-      const userId = await verifyValidAccessToken(accessToken);
+      // const { accessToken } = req.body;
+      // if (!accessToken) throw createError.BadRequest();
+      // const userId = await verifyValidAccessToken(accessToken);
+      const userId = req.payload.aud
       const product = await Note.findById(productId);
       if (!product) {
         throw createError(404, "Product does not exist");
