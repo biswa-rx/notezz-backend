@@ -16,8 +16,8 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "rx@gmail.com",
-    "password": "123"
+    "email": "mukesh@gmail.com",
+    "password": "12345"
 }
 
 
@@ -26,15 +26,11 @@ POST http://localhost:3000/auth/refresh-token
 Content-Type: application/json
 
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc5NzQ1MTYsImV4cCI6MTcxOTUzMjExNiwiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.cCdBhDuOL80ms8ZBq1YMhV7NdIOEK59qfN9K7Qr77Ak"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTXVrZXNoIFNhbWFudHJheSIsImlhdCI6MTY4ODI3OTczNywiZXhwIjoxNzE5ODM3MzM3LCJhdWQiOiI2NGExMWFiOWRjZTdhNDIyNDk0NzI5NTQiLCJpc3MiOiJCSVNXQV9SWCJ9.nirp04vASrSNPOaU7oP0i5q_CX0npwczJPGbXbHK-r4"
 }
 ###
 DELETE http://localhost:3000/auth/logout
-Content-Type: application/json
-
-{
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODc5NzQ1MTYsImV4cCI6MTcxOTUzMjExNiwiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.cCdBhDuOL80ms8ZBq1YMhV7NdIOEK59qfN9K7Qr77A"
-}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQmlzd2FyYW5qYW4gQmVoZXJhIiwiaWF0IjoxNjg4MjkyMDE0LCJleHAiOjE3MTk4NDk2MTQsImF1ZCI6IjY0YTAzYmM5OGZkZGJlOWJjNzZjYjk0ZSIsImlzcyI6IkJJU1dBX1JYIn0.p6yAdVN0VqAl8QPwvb1lvPAYkGTI5b3-2MCw5M3CqAc
 
 ### Random url
 GET http://localhost:3000/xyz
@@ -56,7 +52,7 @@ POST http://localhost:3000/notes
 Content-Type: application/json
 
 {
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODgyMjU4NjgsImV4cCI6MTY4ODMxMjI2OCwiYXVkIjoiNjRhMDNiYzk4ZmRkYmU5YmM3NmNiOTRlIiwiaXNzIjoiQklTV0FfUlgifQ.5oMn-5JvdzTDhrcfpdlb0r4pAEdSLFGazIwVahsVDTY",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODgyNzk3ODcsImV4cCI6MTY4ODM2NjE4NywiYXVkIjoiNjRhMTFhYjlkY2U3YTQyMjQ5NDcyOTU0IiwiaXNzIjoiQklTV0FfUlgifQ.YZV_lOqHozZ_5te3DED1HDujsfb1jgRNDa7uHt4g_H8",
     "name": "good",
     "text": "evening"
 }

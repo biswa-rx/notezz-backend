@@ -26,7 +26,7 @@ module.exports = {
       const user = new User(result);
       const savedUser = await user.save();
       const accessToken = await signAccessToken(savedUser.id);
-      const refreshToken = await signRefreshToken(savedUser.id);
+      const refreshToken = await signRefreshToken(savedUser.id,savedUser.name);
       res.send({ accessToken, refreshToken });
     } catch (err) {
       if (err.isJoi === true) err.status = 422;
@@ -44,7 +44,7 @@ module.exports = {
       if (!isMatch)
         throw createError.Unauthorized("Username/password not valid");
       const accessToken = await signAccessToken(user.id);
-      const refreshToken = await signRefreshToken(user.id);
+      const refreshToken = await signRefreshToken(user.id,user.name);
       res.send({ accessToken, refreshToken });
     } catch (err) {
       if (err.isJoi === true) err.status = 422;
@@ -56,10 +56,10 @@ module.exports = {
     try {
       const { refreshToken } = req.body;
       if (!refreshToken) throw createError.BadRequest();
-      const userId = await verifyRefreshToken(refreshToken);
+      const {userId,userName} = await verifyRefreshToken(refreshToken);
 
       const accessToken = await signAccessToken(userId);
-      const refToken = await signRefreshToken(userId);
+      const refToken = await signRefreshToken(userId,userName);
       res.send({ accessToken: accessToken, refreshToken: refToken });
     } catch (err) {
       next(err);
@@ -68,9 +68,12 @@ module.exports = {
 
   logout: async (req, res, next) => {
     try {
-      const { refreshToken } = req.body;
+      if (!req.headers["authorization"]) return next(createError.Unauthorized());
+      const authHeader = req.headers["authorization"];
+      const bearerToken = authHeader.split(" ");
+      const refreshToken = bearerToken[1];
       if (!refreshToken) throw createError.BadRequest();
-      const userId = await verifyRefreshToken(refreshToken);
+      const {userId} = await verifyRefreshToken(refreshToken);
       client.DEL(userId, (err, val) => {
         if (err) {
           console.log(err.message);

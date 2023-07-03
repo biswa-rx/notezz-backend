@@ -36,9 +36,11 @@ module.exports = {
       next();
     });
   },
-  signRefreshToken: (userId) => {
+  signRefreshToken: (userId,userName) => {
     return new Promise((resolve, reject) => {
-      const payload = {};
+      const payload = {
+        name:userName
+      };
       const secret = process.env.REFRESH_TOKEN_SECRET;
       const option = {
         expiresIn: "1y",
@@ -71,12 +73,13 @@ module.exports = {
             return reject(createError.Unauthorized());
           }
           const userId = payload.aud;
+          const userName = payload.name;
           client.GET(userId, (err, result) => {
             if (err) {
               reject(createError.InternalServerError());
               return;
             }
-            if (refreshToken === result) return resolve(userId);
+            if (refreshToken === result) return resolve({userId,userName});
             else reject(createError.Unauthorized());
           });
         }
