@@ -41,7 +41,7 @@ GET http://localhost:3000/xyz
 
 ### Getting all Notes
 GET http://localhost:3000/notes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODgwNDc1NDMsImV4cCI6MTY4ODEzMzk0MywiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.zJZv_fUbLejCc03brG6KpFoMJLT9dQqXGMCRDeSi_KM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODg4MDU0MTksImV4cCI6MTY4ODg5MTgxOSwiYXVkIjoiNjRhMTFhYjlkY2U3YTQyMjQ5NDcyOTU0IiwiaXNzIjoiQklTV0FfUlgifQ.XojVQitdBDcZQrNnGQN_CRffO-3lC9c4q-izZThCNdo
 
 ### Getting a singel note by its id
 GET http://localhost:3000/notes/64965807c1aff4289ce67fbc
@@ -52,18 +52,20 @@ POST http://localhost:3000/notes
 Content-Type: application/json
 
 {
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODgyNzk3ODcsImV4cCI6MTY4ODM2NjE4NywiYXVkIjoiNjRhMTFhYjlkY2U3YTQyMjQ5NDcyOTU0IiwiaXNzIjoiQklTV0FfUlgifQ.YZV_lOqHozZ_5te3DED1HDujsfb1jgRNDa7uHt4g_H8",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODg4MDU0MTksImV4cCI6MTY4ODg5MTgxOSwiYXVkIjoiNjRhMTFhYjlkY2U3YTQyMjQ5NDcyOTU0IiwiaXNzIjoiQklTV0FfUlgifQ.XojVQitdBDcZQrNnGQN_CRffO-3lC9c4q-izZThCNdo",
     "name": "good",
-    "text": "evening"
+    "text": "evening",
+    "color": "green"
 }
 
 ###Update a note
-PATCH http://localhost:3000/notes/649d9092449982d9b046e4ed
+PATCH http://localhost:3000/notes/64a7b82f6732e3e9ea883b35
 Content-Type: application/json
 
 {
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODgwNDc1NDMsImV4cCI6MTY4ODEzMzk0MywiYXVkIjoiNjQ5NjU3NWNjMWFmZjQyODljZTY3ZmI3IiwiaXNzIjoiQklTV0FfUlgifQ.zJZv_fUbLejCc03brG6KpFoMJLT9dQqXGMCRDeSi_KM",
-    "text": "hello earth"
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODg4MDU0MTksImV4cCI6MTY4ODg5MTgxOSwiYXVkIjoiNjRhMTFhYjlkY2U3YTQyMjQ5NDcyOTU0IiwiaXNzIjoiQklTV0FfUlgifQ.XojVQitdBDcZQrNnGQN_CRffO-3lC9c4q-izZThCNdo",
+    "text": "hello earth",
+    "color": "red"
 }
 
 ###Delete a note

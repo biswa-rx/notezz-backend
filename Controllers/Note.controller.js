@@ -41,7 +41,7 @@ module.exports = {
   },
   createNewNote: async (req, res, next) => {
     try {
-      const { accessToken, name, text } = req.body;
+      const { accessToken, name, text,color } = req.body;
       if (!accessToken) throw createError.BadRequest();
       const userId = await verifyValidAccessToken(accessToken);
 
@@ -49,6 +49,7 @@ module.exports = {
         userId: userId,
         name: req.body.name,
         text: req.body.text,
+        color: req.body.color,
       });
       const result = await note.save();
       res.send(result);
